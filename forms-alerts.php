@@ -20,13 +20,13 @@ add_action('wp_ajax_nopriv_handle_registerform', ['FormsAlert', 'handleRegisterF
 
 function forms_information() {
     if(isset($_SESSION['loginAttempts']) || isset($_SESSION['registerAttempts'])) {
-        if(!isset($_GET['action']) && $_SESSION['loginAttempts']) {
+        if(!isset($_GET['action']) && !empty($_SESSION['loginAttempts'])) {
             echo '<div class="forms-information">
                 <p>Login Attempts: ' . (int) $_SESSION['loginAttempts'] . '</p>
               </div>';
         }
 
-        if(isset($_GET['action']) && $_GET['action'] === 'register' && $_SESSION['registerAttempts']) {
+        if(isset($_GET['action']) && $_GET['action'] === 'register' && !empty($_SESSION['registerAttempts'])) {
             echo '<div class="forms-information">
                 <p>Register Attempts: ' . (int) $_SESSION['registerAttempts'] . '</p>
               </div>';
