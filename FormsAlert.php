@@ -5,6 +5,7 @@ use JetBrains\PhpStorm\NoReturn;
 class FormsAlert
 {
     private static bool|null $instance = null;
+    
     public static function instantiate(): void
     {
         if(!self::$instance) {

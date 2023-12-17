@@ -31,8 +31,8 @@ function _handleForm(formObject, messagePrefix) {
                 alert(`${messagePrefix} ${data}`);
                 window.location.reload();
             },
-            error: function(errorThrown){
-                console.log(errorThrown);
+            error: function(error){
+                console.log(error);
             }
         });
     });
